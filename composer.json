@@ -1,0 +1,18 @@
+{
+  "name" : "mestrona/forwardtoconfigurable",
+  "type": "magento-module",
+  "description" : "Forward simple to configurable products",
+  "homepage" : "https://github.com/mr-jingles/Mestrona_ForwardToConfigurable",
+  "authors" : [
+    {
+      "name" : "Alexander Menk",
+      "homepage" : "http://www.twitter.com/s3lf"
+    }
+  ],
+  "extra" : {
+    "map": [
+      ["src/app/code/community/Mestrona/ForwardToConfigurable", "src/app/code/community/Mestrona/ForwardToConfigurable"],
+      ["src/app/etc/modules/Mestrona_ForwardToConfigurable.xml", "src/app/etc/modules/Mestrona_ForwardToConfigurable.xml"]
+    ]
+  }
+}
