@@ -109,6 +109,8 @@ class Mestrona_ForwardToConfigurable_Model_Observer extends Mage_Core_Model_Abst
         // @see Mage_Core_Controller_Varien_Action::dispatch()
         $controller->setFlag('', Mage_Core_Controller_Front_Action::FLAG_NO_DISPATCH, true);
 
+        Mage::register('forwardtoconfigurable_simple', $currentProduct);
+        Mage::register('forwardtoconfigurable_robot', 'NOINDEX, NOFOLLOW');
 
         $productViewHelper->prepareAndRender($parentId, $controller, $params);
     }

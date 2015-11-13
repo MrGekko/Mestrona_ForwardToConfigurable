@@ -27,12 +27,8 @@ class Mestrona_ForwardToConfigurable_Block_Page_Html_Head extends Mage_Page_Bloc
             $this->_data['robots'] = Mage::getStoreConfig('design/head/default_robots');
         }
 
-        if (($_product = Mage::registry('current_product')) && ($_productId = Mage::registry('current_product')->getId()) && ($_uriid = $this->getRequest()->getParam('id'))) {
-            $parentIds = Mage::getModel('catalog/product_type_configurable')
-                ->getParentIdsByChild($_uriid);
-            if (!empty($parentIds) && in_array($_productId, $parentIds)) { // does not have a parent -> nothing to do
-                $this->_data['robots'] = 'NOINDEX, NOFOLLOW';
-            }
+        if(($robot = Mage::registry('forwardtoconfigurable_robot'))){
+            $this->_data['robots'] = 'NOINDEX, NOFOLLOW';
         }
 
         return $this->_data['robots'];
